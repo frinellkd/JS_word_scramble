@@ -25,10 +25,13 @@
             // prompt the user to guess the original word when given the scrambled word
 
             var guess = prompt("Can you guess what " + scram_word + " is?");
+            var guess_strip = guess.trim();
+            var guess_lower = guess_strip.toLowerCase();
+
 
             // If the user guesses wrong, tell them they were wrong and the right word.
 
-            if (guess !== WORDS[i]) {
+            if (guess_lower !== WORDS[i]) {
                 alert("You did not guess correctly.  The word is " +WORDS[i] + ".");
             } else {
                 alert("Congratulations! You guessed correctly.");
@@ -37,7 +40,7 @@
             // If the user guesses the correct word, congratulate them.
 
             playing = confirm("Press OK To keep playing or Cancel to quit");
-
+            
             // What does confirm() return?
             // What does setting the playing variable do?
         }
